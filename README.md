@@ -31,7 +31,7 @@ We have two ways to reference the Tecnomatix SDK in our projects:
 ### Reference by Drive
 You can map specific SDK Version to a Drive for instance `Z` like this: 
 ```cmd
-/c subst z: "C:\Program Files\Tecnomatix\Tecnomatix_2206.0\eMPower"
+subst z: "C:\Program Files\Tecnomatix\Tecnomatix_2206.0\eMPower"
 ```
 
 You might map additional SDK Version to other drives and switch between the references with different **Build Configurations**.
