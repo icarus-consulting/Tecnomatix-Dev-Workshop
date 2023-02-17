@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="BriX" Version="*" />
+		<PackageReference Include="Yaapii.Atoms" Version="3.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\InspectorGadget.Entity\InspectorGadget.Entity.csproj" />
+	</ItemGroup>
+</Project>

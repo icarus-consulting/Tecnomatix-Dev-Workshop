@@ -1,0 +1,40 @@
+﻿<tmx:TxWindow x:Class="InspectProgram.Tmx.Plugin.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
+        xmlns:tmx="clr-namespace:Tecnomatix.Engineering.Ui.WPF;assembly=Tecnomatix.Engineering.Ui"
+        xmlns:local="clr-namespace:InspectProgram.Tmx.Plugin"
+        mc:Ignorable="d"
+        Title="Inspector Gadget" Height="450" Width="800">
+    <tmx:TxWindow.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    </tmx:TxWindow.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Format">
+                <MenuItem Header="XML" Command="{Binding ApplyMediaCommand}" CommandParameter="xml" />
+                <MenuItem Header="YAML" Command="{Binding ApplyMediaCommand}" CommandParameter="yaml" />
+                <MenuItem Header="JSON" Command="{Binding ApplyMediaCommand}" CommandParameter="json" />
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Translate by 100mm in X" Command="{Binding TranslateCommand}" CommandParameter="x"></MenuItem>
+                <MenuItem Header="Translate by 100mm in Y" Command="{Binding TranslateCommand}" CommandParameter="y"></MenuItem>
+                <MenuItem Header="Translate by 100mm in Z" Command="{Binding TranslateCommand}" CommandParameter="z"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <tmx:TxMessageBar 
+            Grid.Row="1" 
+            Visibility="{Binding Path=IsInvalid, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}" 
+            Content="No program discovered in selection" 
+            CloseButtonVisibility="Collapsed"
+        />
+        <TextBox Grid.Row="2" Text="{Binding Path=Document, Mode=OneWay}" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"></TextBox>
+    </Grid>
+</tmx:TxWindow>

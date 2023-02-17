@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Inspector Gadget": {
+      "commandName": "Executable",
+      "executablePath": "Z:/Tune.exe",
+      "commandLineArgs": "/c newassembler /l offline /file C:/Yaapii_Testdata/Caipi/caipi project.psz"
+    }
+  }
+}

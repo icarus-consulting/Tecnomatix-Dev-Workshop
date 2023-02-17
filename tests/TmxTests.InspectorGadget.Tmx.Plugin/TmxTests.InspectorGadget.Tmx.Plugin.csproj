@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<LangVersion>10</LangVersion>
+	<!--<RestoreAdditionalProjectSources>D:\local-nuget-feed</RestoreAdditionalProjectSources>-->
+    <IsPackable>false</IsPackable>
+	<RunSettingsFilePath>$(MSBuildThisFileDirectory)integrationtest.runsettings</RunSettingsFilePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+    <!--<PackageReference Include="xunit" Version="2.4.1" />-->
+	<PackageReference Include="xunit.assert" Version="2.4.1" />
+    <PackageReference Include="xunit.core" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.1.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+
+	  <PackageReference Include="BriX" Version="*" />
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+  </ItemGroup>
+
+	<!-- 
+		This is the old style of referencing the Tecnomatix SDK
+		A better way is to make the SDK available via a NuGet feed.
+	-->
+	<ItemGroup>
+		<Reference Include="Z:/Tecnomatix.Engineering.dll"/>
+		<Reference Include="Z:/Tecnomatix.Engineering.Ui.dll" />
+	</ItemGroup>
+
+	<!-- REFERENCE for the xUnit Visual Studio Tecnomatix  Runner-->
+	<!--<ItemGroup>
+		<PackageReference Include="Xunit.Tecnomatix.Trial" Version="*">
+			<Aliases>XunitExecutionTecnomatix</Aliases>
+		</PackageReference>
+	</ItemGroup>-->
+
+	<ItemGroup>
+	  <None Update="integrationtest.runsettings">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="../../src/InspectProgram.Tmx.Plugin\**\*.cs" Exclude="../../src/InspectProgram.Tmx.Plugin\obj\**\*.cs;../../src/InspectProgram.Tmx.Plugin\Views\**\*;../../src/InspectProgram.Tmx.Plugin\**\Entrance.cs">
+			<Link>InspectProgram.Tmx.Plugin\%(RecursiveDir)/%(FileName)%(Extension)</Link>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\src\InspectorGadget.App\InspectorGadget.App.csproj" />
+	  <ProjectReference Include="..\..\src\TmxSmarts\TmxSmarts.csproj" />
+	</ItemGroup>
+</Project>

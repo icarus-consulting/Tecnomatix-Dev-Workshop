@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>InspectProgram.Tmx.Plugin</RootNamespace>
+	<LangVersion>10</LangVersion>
+	<!-- Enable WPF and Forms for this project -->
+	<UseWPF>true</UseWPF>
+	<UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="inspect_logo_large.png" />
+    <None Remove="inspect_logo_medium.png" />
+    <None Remove="inspect_logo_small.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\inspect_logo_large.png" />
+    <EmbeddedResource Include="Assets\inspect_logo_medium.png" />
+    <EmbeddedResource Include="Assets\inspect_logo_small.png" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BriX" Version="*" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+	</ItemGroup>
+	
+	
+  <ItemGroup>
+    <ProjectReference Include="..\InspectorGadget.App\InspectorGadget.App.csproj" />
+    <ProjectReference Include="..\TmxSmarts\TmxSmarts.csproj" />
+  </ItemGroup>
+
+	<!-- 
+		This is the old style of referencing the Tecnomatix SDK
+		A better way is to make the SDK available via a NuGet feed.
+	-->
+	<ItemGroup>
+		<Reference Include="Z:/Tecnomatix.Engineering.dll"/>
+		<Reference Include="Z:/Tecnomatix.Engineering.Ui.dll" />
+	</ItemGroup>
+
+	<!--
+		!!! THIS TARGET IS CONDITION BASED AND WILL ONLY BE EXECUTED IF CONFIGURATION IS NOT 'Release' !!!
+		
+		Post Build event which copies the required dll and xml files into DotNetCommands and DotNetExternalApplications.
+		THIS TARGET IS CONDITION BASED AND WILL ONLY BE EXECUTED IF CONFIGURATION IS NOT 'Release'
+		Also removes the Tecnoamtix related dlls which are copied during build.
+	-->
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'!='Release'">
+		<PropertyGroup>
+			<AppName>InspectorGadget</AppName>
+			<EMPOWER>Z:\</EMPOWER>
+		</PropertyGroup>
+		<MakeDir Directories="$(EMPOWER)DotNetCommands\$(AppName)"></MakeDir>
+		<ItemGroup>
+			<SourceFiles Include="$(OutDir)**\*.*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(SourceFiles)" DestinationFolder="$(EMPOWER)DotNetCommands\$(AppName)" Retries="3" RetryDelayMilliseconds="100" SkipUnchangedFiles="true"></Copy>
+		<ItemGroup>
+			<FilesToRemove Include="$(EMPOWER)DotNetCommands\Caipi\**\Tecnomatix.Engineering*.dll;$(EMPOWER)DotNetCommands\$(AppName)\**\TxEu*.dll;$(EMPOWER)DotNetCommands\$(AppName)\**\EngineeringInternalExtension.dll;$(EMPOWER)DotNetCommands\$(AppName)\**\Implementation.dll;$(EMPOWER)DotNetCommands\$(AppName)\**\EMP*.dll;" />
+		</ItemGroup>
+		<Message Text="Remove Tecnomatix and Infrastructure DLL's" Importance="normal"></Message>
+		<Delete Files="@(FilesToRemove)" TreatErrorsAsWarnings="false"></Delete>
+		<Copy SourceFiles="$(ProjectDir)$(AppName).xml" DestinationFolder="$(EMPOWER)DotNetExternalApplications" Retries="3" RetryDelayMilliseconds="100" SkipUnchangedFiles="true"></Copy>
+	</Target>
+	
+</Project>

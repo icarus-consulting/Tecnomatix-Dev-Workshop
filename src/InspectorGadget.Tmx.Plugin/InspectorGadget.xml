@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TecnomatixConfigurationData>
+	<ConfigurationsSection>
+		<Configuration ID="newassembler" Name="newassembler">
+			<DotNetCommands>
+				<!--Start:_newassembler_C:\Program Files\Tecnomatix_15.1\eMPower\DotNetCommands\Yaapii\Jarvis.Cmd.Tmx.dll_Entrance-->
+				<Assembly File="DotNetCommands\InspectorGadget\InspectorGadget.Tmx.Plugin.dll">
+					<DotNetCommand Namespace="InspectorGadget.Tmx.Plugin" ClassName="Entrance" />
+				</Assembly>
+			</DotNetCommands>
+		</Configuration>
+	</ConfigurationsSection>
+</TecnomatixConfigurationData>

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+	  <LangVersion>10</LangVersion>
+  </PropertyGroup>
+
+	<!-- 
+		This is the old style of referencing the Tecnomatix SDK
+		A better way is to make the SDK available via a NuGet feed.
+	-->
+	<ItemGroup>
+		<Reference Include="Z:/Tecnomatix.Engineering.dll" />
+		<Reference Include="Z:/Tecnomatix.Engineering.Ui.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Yaapii.Atoms" Version="3.0.0" />
+	</ItemGroup>
+</Project>
