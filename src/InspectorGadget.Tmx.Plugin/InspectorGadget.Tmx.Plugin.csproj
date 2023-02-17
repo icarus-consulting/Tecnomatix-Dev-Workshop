@@ -59,7 +59,7 @@
 		</ItemGroup>
 		<Copy SourceFiles="@(SourceFiles)" DestinationFolder="$(EMPOWER)DotNetCommands\$(AppName)" Retries="3" RetryDelayMilliseconds="100" SkipUnchangedFiles="true"></Copy>
 		<ItemGroup>
-			<FilesToRemove Include="$(EMPOWER)DotNetCommands\Caipi\**\Tecnomatix.Engineering*.dll;$(EMPOWER)DotNetCommands\$(AppName)\**\TxEu*.dll;$(EMPOWER)DotNetCommands\$(AppName)\**\EngineeringInternalExtension.dll;$(EMPOWER)DotNetCommands\$(AppName)\**\Implementation.dll;$(EMPOWER)DotNetCommands\$(AppName)\**\EMP*.dll;" />
+			<FilesToRemove Include="$(EMPOWER)DotNetCommands\$(AppName)\**\Tecnomatix.Engineering*.dll;$(EMPOWER)DotNetCommands\$(AppName)\**\TxEu*.dll;$(EMPOWER)DotNetCommands\$(AppName)\**\EngineeringInternalExtension.dll;$(EMPOWER)DotNetCommands\$(AppName)\**\Implementation.dll;$(EMPOWER)DotNetCommands\$(AppName)\**\EMP*.dll;" />
 		</ItemGroup>
 		<Message Text="Remove Tecnomatix and Infrastructure DLL's" Importance="normal"></Message>
 		<Delete Files="@(FilesToRemove)" TreatErrorsAsWarnings="false"></Delete>
