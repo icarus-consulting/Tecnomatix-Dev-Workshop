@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <IsPackable>false</IsPackable>
+	  <LangVersion>9</LangVersion>
+	  <RestoreAdditionalProjectSources>$(MSBuildThisFileDirectory)..\..\nuget-feed</RestoreAdditionalProjectSources>
+	<RunSettingsFilePath>$(MSBuildThisFileDirectory)integrationtest.runsettings</RunSettingsFilePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.1.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+	  <PackageReference Include="Yaapii.Atoms" Version="3.0.0" />
+  </ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Xunit.Tecnomatix.Trial" Version="3.0.0">
+			<Aliases>XunitExecutionTecnomatix</Aliases>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\src\TmxSmarts\TmxSmarts.csproj" />
+	</ItemGroup>
+
+
+	<!-- 
+		This is the old style of referencing the Tecnomatix SDK
+		A better way is to make the SDK available via a NuGet feed.
+	-->
+	<ItemGroup>
+		<Reference Include="Z:/Tecnomatix.Engineering.dll" />
+		<Reference Include="Z:/Tecnomatix.Engineering.Ui.dll" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <None Update="integrationtest.runsettings">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>

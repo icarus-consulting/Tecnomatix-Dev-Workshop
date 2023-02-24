@@ -12,9 +12,12 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Tecnomatix.Engineering;
+using Tecnomatix.Planning;
+using TmxSmarts;
 using TmxSmarts.Location;
 using TmxSmarts.Program;
 using Yaapii.Atoms.Collection;
+using Yaapii.Atoms.Scalar;
 
 namespace InspectorGadget.Tmx.Plugin
 {
@@ -65,6 +68,8 @@ namespace InspectorGadget.Tmx.Plugin
                 TxApplication.ActiveSelection.ItemsSet += ItemsSet;
                 TxApplication.ActiveSelection.ItemsAdded -= ItemsAdded;
                 TxApplication.ActiveSelection.ItemsAdded += ItemsAdded;
+
+
                 
             }
             catch (Exception ex)

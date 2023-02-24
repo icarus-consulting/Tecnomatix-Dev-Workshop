@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <RootNamespace>InspectProgram.Tmx.Plugin</RootNamespace>
-	<LangVersion>10</LangVersion>
+	<LangVersion>9</LangVersion>
 	<!-- Enable WPF and Forms for this project -->
 	<UseWPF>true</UseWPF>
 	<UseWindowsForms>true</UseWindowsForms>

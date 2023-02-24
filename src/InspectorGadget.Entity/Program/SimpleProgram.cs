@@ -1,4 +1,5 @@
-﻿using Yaapii.Atoms.Enumerable;
+﻿using System.Collections.Generic;
+using Yaapii.Atoms.Enumerable;
 using Yaapii.Atoms.List;
 
 namespace InspectorGadget.Entity.Program

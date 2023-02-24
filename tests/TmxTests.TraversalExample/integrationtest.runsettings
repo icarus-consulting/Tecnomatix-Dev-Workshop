@@ -5,11 +5,14 @@
 	</RunConfiguration>
 	<TestRunParameters>
 		<!-- The platform for the Tecnomatix environment. Can be one of: psz, ems , tc, tcpsz-->
-		<Parameter name="platform" value="psz" />
+		<Parameter name="platform" value="ems" />
 		<!-- Optional load mode. Can either be line or default -->
 		<!--<Parameter name="mode" value="default" />-->
+		<Parameter name="project" value="icaBOT_DOP" />
 		<!-- The study which will be loaded. For psz and tcpsz a file path releative to the test data root is expected. For ems the external id has to be provided as study-->
-		<Parameter name="study" value="C:\Temp\Caipi\caipi project.psz" />
+		<Parameter name="study" value="PP-ICARUS-6-10-2017-8-39-7-9580-32580" />
+
+		<!--<Parameter name="study" value="C:\Temp\Caipi\caipi project.psz" />-->
 		<!-- The System Root releative to the tests data root -->
 		<Parameter name="sysroot" value="C:\Temp\Caipi\sysroot" />
 		<!-- The name of the Solution the test project belongs to -->

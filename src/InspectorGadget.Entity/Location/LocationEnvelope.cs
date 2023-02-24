@@ -1,4 +1,5 @@
-﻿using Yaapii.Atoms;
+﻿using System;
+using Yaapii.Atoms;
 using Yaapii.Atoms.Text;
 
 namespace InspectorGadget.Entity.Location

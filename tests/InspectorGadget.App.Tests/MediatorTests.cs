@@ -3,6 +3,7 @@ using InspectorGadget.Core;
 using InspectorGadget.Entity.Program;
 using InspectorGadget.Entity.Props;
 using InspectorGadget.Entity.Robot;
+using Xunit;
 
 namespace InspectorGadget.App.Tests
 {

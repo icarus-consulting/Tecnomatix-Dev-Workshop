@@ -1,4 +1,5 @@
 ﻿using InspectorGadget.Entity.Props;
+using System.Collections.Generic;
 
 namespace InspectorGadget.Entity.Robot
 {

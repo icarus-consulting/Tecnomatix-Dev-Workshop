@@ -1,4 +1,6 @@
-﻿using Yaapii.Atoms;
+﻿using System;
+using System.Collections.Generic;
+using Yaapii.Atoms;
 using Yaapii.Atoms.Text;
 
 namespace InspectorGadget.Entity.Program

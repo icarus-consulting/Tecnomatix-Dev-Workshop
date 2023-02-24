@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-	<LangVersion>10</LangVersion>
-	<!--<RestoreAdditionalProjectSources>D:\local-nuget-feed</RestoreAdditionalProjectSources>-->
+    <ImplicitUsings>disabled</ImplicitUsings>
+    
+	<LangVersion>9.0</LangVersion>
+	  <RestoreAdditionalProjectSources>$(MSBuildThisFileDirectory)..\..\nuget-feed</RestoreAdditionalProjectSources>
     <IsPackable>false</IsPackable>
 	<RunSettingsFilePath>$(MSBuildThisFileDirectory)integrationtest.runsettings</RunSettingsFilePath>
   </PropertyGroup>
@@ -33,16 +33,16 @@
 		A better way is to make the SDK available via a NuGet feed.
 	-->
 	<ItemGroup>
-		<Reference Include="Z:/Tecnomatix.Engineering.dll"/>
+		<Reference Include="Z:/Tecnomatix.Engineering.dll" />
 		<Reference Include="Z:/Tecnomatix.Engineering.Ui.dll" />
 	</ItemGroup>
 
 	<!-- REFERENCE for the xUnit Visual Studio Tecnomatix  Runner-->
-	<!--<ItemGroup>
-		<PackageReference Include="Xunit.Tecnomatix.Trial" Version="*">
+	<ItemGroup>
+		<PackageReference Include="Xunit.Tecnomatix.Trial" Version="3.0.0">
 			<Aliases>XunitExecutionTecnomatix</Aliases>
 		</PackageReference>
-	</ItemGroup>-->
+	</ItemGroup>
 
 	<ItemGroup>
 	  <None Update="integrationtest.runsettings">
