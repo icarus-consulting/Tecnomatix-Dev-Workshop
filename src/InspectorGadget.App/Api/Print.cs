@@ -32,7 +32,7 @@ namespace InspectorGadget.App.Api
         {
             var format = request.Format;
             var printed = this.print[format.ToLower()];
-            // special treatment for json because an BxNothing will be printed as '{}' which is indeed an empty json structure but loks ugly in the UI
+            // special treatment for json because an BxNothing will be printed as '{}' which is indeed an empty json structure but looks ugly in the UI
             if (format.Equals("json", StringComparison.InvariantCultureIgnoreCase) && printed.Equals("{}", StringComparison.InvariantCultureIgnoreCase))
             {
                 printed = "";

@@ -35,8 +35,8 @@ namespace InspectorGadget.Tmx.Plugin
                         core,
                         new InspectApi(
                             core,
-                            typeof(Print),
-                            typeof(Translate)
+                            typeof(InspectorGadget.App.Api.Print), // comes from app layer which is NOT coupled to tecnomatix
+                            typeof(InspectorGadget.Tmx.Plugin.Api.Location.Translate) // comes layer which IS coupled to tecnomatix
                         )
                     )
                 );

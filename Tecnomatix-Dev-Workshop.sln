@@ -21,8 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InspectorGadget.Entity", "s
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B85BEC0C-2269-4118-8A3A-C8C7A0186956}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TmxTests.TraversalExample", "tests\TmxTests.TraversalExample\TmxTests.TraversalExample.csproj", "{7A968424-4B5E-4EF0-8547-D7BBC23E94A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +61,10 @@ Global
 		{E829D8E6-3007-41D6-B531-24E4B1C2FEE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E829D8E6-3007-41D6-B531-24E4B1C2FEE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E829D8E6-3007-41D6-B531-24E4B1C2FEE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A968424-4B5E-4EF0-8547-D7BBC23E94A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A968424-4B5E-4EF0-8547-D7BBC23E94A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A968424-4B5E-4EF0-8547-D7BBC23E94A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A968424-4B5E-4EF0-8547-D7BBC23E94A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +72,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{001499D8-16AF-4ADE-896A-88C90DA54B87} = {DAC8CD12-393F-4E48-969C-5A0EED634ABA}
 		{B68B2E77-622E-4030-885C-77AA73D3D8FD} = {DAC8CD12-393F-4E48-969C-5A0EED634ABA}
+		{7A968424-4B5E-4EF0-8547-D7BBC23E94A6} = {DAC8CD12-393F-4E48-969C-5A0EED634ABA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5232CB9C-499E-4ECC-BA69-373E770D073A}
