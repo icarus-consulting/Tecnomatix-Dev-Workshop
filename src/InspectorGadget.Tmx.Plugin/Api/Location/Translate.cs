@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Tecnomatix.Engineering;
 using TmxSmarts;
+using TmxSmarts.Object;
 using Yaapii.Atoms.Enumerable;
 
 namespace InspectorGadget.Tmx.Plugin.Api.Location
@@ -45,8 +46,8 @@ namespace InspectorGadget.Tmx.Plugin.Api.Location
                         var position =
                             new TxTransformation(
                                 //TODO: Implement a TuLocatableObject class to make access simpler
-                                new EIDGrab<ITxLocatableObject>(location.Id()).Value().AbsoluteLocation.Translation + delta,
-                                new EIDGrab<ITxLocatableObject>(location.Id()).Value().AbsoluteLocation.RotationRPY_XYZ, TxTransformation.TxRotationType.RPY_XYZ
+                                new TuLocatableObject(location.Id()).Value().AbsoluteLocation.Translation + delta,
+                                new TuLocatableObject(location.Id()).Value().AbsoluteLocation.RotationRPY_XYZ, TxTransformation.TxRotationType.RPY_XYZ
                             );
                         new EIDGrab<ITxLocatableObject>(location.Id()).Value().AbsoluteLocation = position;
                     }

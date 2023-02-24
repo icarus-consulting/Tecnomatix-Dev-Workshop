@@ -1,5 +1,6 @@
 ﻿using System;
 using Tecnomatix.Engineering;
+using Yaapii.Atoms;
 using Yaapii.Atoms.Scalar;
 
 namespace TmxSmarts
@@ -14,14 +15,24 @@ namespace TmxSmarts
         /// Converts a <see cref="ITxObject"/> to given type
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public TsConvert(ITxObject input) : base(() =>
+        public TsConvert(ITxObject input) :this(
+            ScalarOf.New(input)
+        )
+        { }
+
+        /// <summary>
+        /// Converts a <see cref="ITxObject"/> to given type
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        public TsConvert(IScalar<ITxObject> input) : base(() =>
         {
-            if(input is not T)
+            var val = input.Value();
+            if(val is not T)
             {
-                throw new InvalidCastException($"Cannot convert '{input.GetType().Name}' to '{typeof(T).Name}'");
+                throw new InvalidCastException($"Cannot convert '{val.GetType().Name}' to '{typeof(T).Name}'");
             }
 
-            return (T)input;
+            return (T)val;
         })
         { }
     }

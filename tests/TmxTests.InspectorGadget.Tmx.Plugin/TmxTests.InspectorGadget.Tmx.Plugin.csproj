@@ -51,8 +51,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Include="../../src/InspectProgram.Tmx.Plugin\**\*.cs" Exclude="../../src/InspectProgram.Tmx.Plugin\obj\**\*.cs;../../src/InspectProgram.Tmx.Plugin\Views\**\*;../../src/InspectProgram.Tmx.Plugin\**\Entrance.cs">
-			<Link>InspectProgram.Tmx.Plugin\%(RecursiveDir)/%(FileName)%(Extension)</Link>
+		<Compile Include="../../src/InspectorGadget.Tmx.Plugin\**\*.cs" Exclude="../../src/InspectorGadget.Tmx.Plugin\obj\**\*.cs;../../src/InspectorGadget.Tmx.Plugin\Views\**\*;../../src/InspectorGadget.Tmx.Plugin\**\Entrance.cs">
+			<Link>InspectorGadget.Tmx.Plugin\%(RecursiveDir)/%(FileName)%(Extension)</Link>
 		</Compile>
 	</ItemGroup>
 

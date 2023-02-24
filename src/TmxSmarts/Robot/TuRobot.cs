@@ -6,6 +6,10 @@ namespace TmxSmarts.Robot
 {
     public class TuRobot : ScalarEnvelope<TxRobot>
     {
+        public TuRobot(ITxObject robot) : base(
+                ScalarOf.New(robot as TxRobot)
+        )
+        { }
         public TuRobot(ITxRoboticLocationOperation location): this(
             ScalarOf.New(() => 
                 new TsConvert<TxRobot>(location.ParentRoboticOperation.Robot).Value().ProcessModelId
