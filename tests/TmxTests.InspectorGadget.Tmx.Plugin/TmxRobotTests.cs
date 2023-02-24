@@ -15,5 +15,13 @@ namespace TmxTests.InspectorGadget.Tmx.Plugin
             var robot = new TmxRobot(new TuRobot(robotId));
             Assert.Equal(robotId, robot.Id());
         }
+
+        [XunitExecutionTecnomatix.Xunit.TmxFact]
+        public void HasName()
+        {
+            var robotId = "PP-0b3ceaec-8360-488f-b939-2c84f9986879";
+            var robot = new TmxRobot(new TuRobot(robotId));
+            Assert.Equal("1540211R1", robot.Name());
+        }
     }
 }
